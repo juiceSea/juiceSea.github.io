@@ -1,145 +1,215 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
-  
-  <title>我的第一篇博客 | Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="Spring一.Spring初识1.Spring是什么？1.1 Spring是一个开源框架 1.2 Spring为简化企业级应用开发而生，使用Spring可以使简单的JavaBean实现以前只有EJB才能实现的功能 1.3 Spring是一个&#x3D;&#x3D;IOC反转控制&#x3D;&#x3D;和&#x3D;&#x3D;AOP面向切面编程&#x3D;&#x3D;容器框架 &#x3D;&amp;">
-<meta property="og:type" content="article">
-<meta property="og:title" content="我的第一篇博客">
-<meta property="og:url" content="http://example.com/2023/04/13/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Spring一.Spring初识1.Spring是什么？1.1 Spring是一个开源框架 1.2 Spring为简化企业级应用开发而生，使用Spring可以使简单的JavaBean实现以前只有EJB才能实现的功能 1.3 Spring是一个&#x3D;&#x3D;IOC反转控制&#x3D;&#x3D;和&#x3D;&#x3D;AOP面向切面编程&#x3D;&#x3D;容器框架 &#x3D;&amp;">
-<meta property="og:locale" content="en_US">
-<meta property="og:image" content="e:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/igeek.jpg">
-<meta property="og:image" content="e:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/1624203387935.bmp">
-<meta property="og:image" content="e:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/image-20200712232651926.png">
-<meta property="og:image" content="e:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/image-20200712232929343.png">
-<meta property="og:image" content="e:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/image-20200712233144462.png">
-<meta property="og:image" content="e:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/image-20200712233845544.png">
-<meta property="og:image" content="e:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/wps4.jpg">
-<meta property="og:image" content="e:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/wps5.jpg">
-<meta property="og:image" content="e:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/wps7.jpg">
-<meta property="og:image" content="e:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/wps9.jpg">
-<meta property="og:image" content="e:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/1624205450396.png">
-<meta property="og:image" content="e:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/1624205680085.png">
-<meta property="og:image" content="e:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/1624205700321.png">
-<meta property="og:image" content="e:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/1624206566669.png">
-<meta property="og:image" content="e:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/1624206601107.png">
-<meta property="og:image" content="e:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/image-20200713001742668.png">
-<meta property="og:image" content="e:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/1624207675347.png">
-<meta property="og:image" content="e:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/1624207684616.png">
-<meta property="og:image" content="e:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/1624207142631.png">
-<meta property="og:image" content="e:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/1624207251843.png">
-<meta property="og:image" content="e:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/1624207264116.png">
-<meta property="og:image" content="e:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/1624207273596.png">
-<meta property="og:image" content="e:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/1624207782369.png">
-<meta property="og:image" content="e:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/1624207914606.png">
-<meta property="og:image" content="e:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/1624207952567.png">
-<meta property="og:image" content="e:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/1624207251843.png">
-<meta property="og:image" content="e:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/1624209454641.png">
-<meta property="og:image" content="e:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/image-20200713030313168.png">
-<meta property="og:image" content="e:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/image-20200713030508879.png">
-<meta property="og:image" content="e:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/wps4u6ax2.png">
-<meta property="og:image" content="e:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/wpsvszCQD.png">
-<meta property="og:image" content="e:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/wpsIxaTZU.png">
-<meta property="og:image" content="e:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/image-20200713030831721.png">
-<meta property="og:image" content="e:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/wpsjXDKhZ.png">
-<meta property="og:image" content="e:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/wpsgqn01n.png">
-<meta property="og:image" content="e:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/wpsW0UVa6.png">
-<meta property="og:image" content="e:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/1624209924680.png">
-<meta property="og:image" content="e:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/1624210226913.png">
-<meta property="og:image" content="e:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/1624210239022.png">
-<meta property="og:image" content="e:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/1624210263240.png">
-<meta property="og:image" content="e:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/1624210283686.png">
-<meta property="og:image" content="e:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/1624210311953.png">
-<meta property="og:image" content="e:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/1624210329897.png">
-<meta property="article:published_time" content="2023-04-13T01:24:51.000Z">
-<meta property="article:modified_time" content="2023-04-13T01:30:34.697Z">
-<meta property="article:author" content="John Doe">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="e:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/igeek.jpg">
-  
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="shortcut icon" href="/favicon.png">
-  
-  
-    
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
 
+
+<!DOCTYPE html>
+<html lang="en" color-mode=light>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>我的第一篇博客 - Hexo</title>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="google" content="notranslate" />
   
+  <meta name="description" content="
+
+Spring一.Spring初识1.Spring是...">
+  <meta name="author" content="John Doe">
+  <link rel="icon" href="/images/icons/favicon-16x16.png" type="image/png" sizes="16x16">
+  <link rel="icon" href="/images/icons/favicon-32x32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/images/icons/apple-touch-icon.png" sizes="180x180">
+  <meta rel="mask-icon" href="/images/icons/stun-logo.svg" color="#333333">
+  
+    <meta rel="msapplication-TileImage" content="/images/icons/favicon-144x144.png">
+    <meta rel="msapplication-TileColor" content="#000000">
+  
+
   
 <link rel="stylesheet" href="/css/style.css">
 
-  
-    
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
 
   
+    
+<link rel="stylesheet" href="https://at.alicdn.com/t/font_1445822_p6ry5n7lrr.css">
+
+  
+
+  
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
+
+  
+
+  
+    
+      
+        
+        
+<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/xcode.min.css" name="highlight-style" mode="light">
+
+      
+        
+        
+<link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.18.1/styles/solarized-dark.min.css" name="highlight-style" mode="dark">
+
+      
+  
+
+  <script>
+    var CONFIG = window.CONFIG || {};
+    var ZHAOO = window.ZHAOO || {};
+    CONFIG = {
+      isHome: false,
+      fancybox: true,
+      pjax: false,
+      loading: {
+        gif: '/images/theme/loading.gif',
+        lottie: ''
+      },
+      lazyload: {
+        enable: true,
+        only_post: 'false',
+        loading: {
+          gif: '/images/theme/loading.gif',
+          lottie: ''
+        }
+      },
+      donate: {
+        enable: true,
+        alipay: 'https://pic.izhaoo.com/alipay.jpg',
+        wechat: 'https://pic.izhaoo.com/wechat.jpg'
+      },
+      galleries: {
+        enable: true
+      },
+      fab: {
+        enable: true,
+        always_show: false
+      },
+      carrier: {
+        enable: true
+      },
+      daovoice: {
+        enable: false
+      },
+      preview: {
+        background: {
+          default: '',
+          api: ''
+        },
+        motto: {
+          default: '我在开了灯的床头下，想问问自己的心啊。',
+          typing: true,
+          api: 'https://v2.jinrishici.com/one.json',
+          data_contents: '["data","content"]'
+        },
+      },
+      qrcode: {
+        enable: true,
+        type: 'url',
+        image: 'https://pic.izhaoo.com/weapp-code.jpg',
+      },
+      toc: {
+        enable: true
+      },
+      scrollbar: {
+        type: 'default'
+      },
+      notification: {
+        enable: false,
+        delay: 4500,
+        list: '',
+        page_white_list: '',
+        page_black_list: ''
+      },
+      search: {
+        enable: false,
+        path: ''
+      }
+    }
+  </script>
+
+  
+
+  
+
 <meta name="generator" content="Hexo 6.3.0"></head>
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
+<body class="lock-screen">
+  <div class="loading" id="loading"></div>
+  
+    
+
+
+  <nav class="navbar">
+    <div class="left">
+      
+        <i class="iconfont iconhome j-navbar-back-home"></i>
+      
+      
+        <i class="iconfont iconqrcode j-navbar-qrcode"></i>
+      
+      
+        <i class="iconfont iconmoono" id="color-toggle" color-toggle="light"></i>
+      
       
     </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
-      </div>
+    <div class="center">我的第一篇博客</div>
+    <div class="right">
+      <i class="iconfont iconmenu j-navbar-menu"></i>
+    </div>
+    
+      <div id="qrcode-navbar"></div>
+    
+  </nav>
+
+  
+  
+
+<nav class="menu">
+  <div class="menu-container">
+    <div class="menu-close">
+      <i class="iconfont iconbaseline-close-px"></i>
+    </div>
+    <ul class="menu-content"><li class="menu-item">
+        <a href="/ " class="underline "> 首页</a>
+      </li><li class="menu-item">
+        <a href="/galleries/ " class="underline "> 摄影</a>
+      </li><li class="menu-item">
+        <a href="/archives/ " class="underline "> 归档</a>
+      </li><li class="menu-item">
+        <a href="/tags/ " class="underline "> 标签</a>
+      </li><li class="menu-item">
+        <a href="/categories/ " class="underline "> 分类</a>
+      </li><li class="menu-item">
+        <a href="/about/ " class="underline "> 关于</a>
+      </li></ul>
+    
+      <div class="menu-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_blank" href="https://github.com/izhaoo/hexo-theme-zhaoo">zhaoo</a></p></div>
+    
+  </div>
+</nav>
+  <main id="main">
+  <div class="article-wrap">
+    <div class="row container">
+      <div class="col-xl-3"></div>
+      <div class="col-xl-6"><article class="article">
+  <div class="wrap">
+    <section class="head">
+  <img   class="lazyload" data-original="/images/theme/post-image.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  draggable="false">
+  <div class="head-mask">
+    <h1 class="head-title">我的第一篇博客</h1>
+    <div class="head-info">
+      <span class="post-info-item"><i class="iconfont iconcalendar"></i>April 13, 2023</span>
+      
+      <span class="post-info-item"><i class="iconfont iconfont-size"></i>66168</span>
     </div>
   </div>
-</header>
-
-      <div class="outer">
-        <section id="main"><article id="post-我的第一篇博客" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/04/13/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" class="article-date">
-  <time class="dt-published" datetime="2023-04-13T01:24:51.000Z" itemprop="datePublished">2023-04-13</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+</section>
+    <section class="main">
+      <section class="content">
         
-  
-    <h1 class="p-name article-title" itemprop="headline name">
-      我的第一篇博客
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <img src="E:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/igeek.jpg" style="zoom:50%;" />
+        <img   class="lazyload" data-original="E:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/igeek.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  style="zoom:50%;" />
 
 <h1 id="Spring"><a href="#Spring" class="headerlink" title="Spring"></a>Spring</h1><h1 id="一-Spring初识"><a href="#一-Spring初识" class="headerlink" title="一.Spring初识"></a>一.Spring初识</h1><h2 id="1-Spring是什么？"><a href="#1-Spring是什么？" class="headerlink" title="1.Spring是什么？"></a>1.Spring是什么？</h2><p>1.1 Spring是一个开源框架</p>
 <p>1.2 Spring为简化企业级应用开发而生，使用Spring可以使简单的JavaBean实现以前只有EJB才能实现的功能</p>
@@ -152,7 +222,7 @@
 <p>2.6 <strong>一站式</strong>：在IOC和AOP的基础上可以整合各种企业应用的开源框架（如Struts2、Hibernate、Mybatis）和优秀的第三方类库（实际上Spring自身也提供了展现层的Spring MVC和持久层的Spring JDBC）</p>
 <h2 id="3-Spring-模块"><a href="#3-Spring-模块" class="headerlink" title="3.Spring 模块"></a>3.Spring 模块</h2><p>Spring官网： <a target="_blank" rel="noopener" href="https://spring.io/">https://spring.io/</a></p>
 <p>mvn仓库地址：<a target="_blank" rel="noopener" href="https://mvnrepository.com/">https://mvnrepository.com/</a></p>
-<p><img src="E:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/1624203387935.bmp"> </p>
+<p><img   class="lazyload" data-original="E:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/1624203387935.bmp" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" > </p>
 <blockquote>
 <p>Core Container核心容器       </p>
 <p>AOP  Aspects面向切面编程    </p>
@@ -169,12 +239,12 @@
 <p> 一个典型的 Spring 项目需要创建一个或多个 Bean 配置文件, 这些配置文件用于在 Spring IOC 容器里配置 Bean。</p>
 <p> Bean 的配置文件可以放在 classpath下：</p>
 <p><strong>新建resources文件夹</strong></p>
-<p><img src="E:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/image-20200712232651926.png" alt="image-20200712232651926"></p>
+<p><img    class="lazyload" data-original="E:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/image-20200712232651926.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">image-20200712232651926</span></p>
 <p><strong>将resources文件夹设置为Resources Root</strong></p>
-<p><img src="E:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/image-20200712232929343.png" alt="image-20200712232929343"></p>
+<p><img    class="lazyload" data-original="E:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/image-20200712232929343.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">image-20200712232929343</span></p>
 <p><strong>新建spring的核心配置文件，一般默认命名为applicationContext.xml</strong></p>
-<p><img src="E:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/image-20200712233144462.png" alt="image-20200712233144462"></p>
-<p><img src="E:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/image-20200712233845544.png" alt="image-20200712233845544"></p>
+<p><img    class="lazyload" data-original="E:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/image-20200712233144462.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">image-20200712233144462</span></p>
+<p><img    class="lazyload" data-original="E:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/image-20200712233845544.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">image-20200712233845544</span></p>
 <h2 id="5-创建-HelloWorld-java"><a href="#5-创建-HelloWorld-java" class="headerlink" title="5.创建 HelloWorld.java"></a>5.创建 HelloWorld.java</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.cm.spring.ch01;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.context.ApplicationContext;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.context.support.ClassPathXmlApplicationContext;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">  IOC控制反转：</span></span><br><span class="line"><span class="comment">  	原来自己创建对象，现在可以通过Spring容器来创建对象，我们从中获取对象</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">HelloWorld</span> &#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">private</span> String userName;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">setUserName1</span><span class="params">(String username)</span>&#123;</span><br><span class="line"></span><br><span class="line">		System.out.println(<span class="string">&quot;setUserName1：&quot;</span>+username);</span><br><span class="line"></span><br><span class="line">		<span class="built_in">this</span>.userName =  username;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="title function_">HelloWorld</span><span class="params">()</span>&#123;</span><br><span class="line"></span><br><span class="line">		System.out.println(<span class="string">&quot;构造方法。。。&quot;</span>);</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"> 	<span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">hello</span><span class="params">()</span>&#123;</span><br><span class="line"></span><br><span class="line">		System.out.println(<span class="string">&quot;Hello: &quot;</span>+userName);</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 
@@ -206,15 +276,15 @@
 <blockquote>
 <p>IOC 前生 – 分离接口与实现：耦合度最高的方式，因为在报表服务类中需要知道接口及其每个实现类的细节</p>
 </blockquote>
-<p><img src="E:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/wps4.jpg" alt="img"></p>
+<p><img    class="lazyload" data-original="E:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/wps4.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">img</span></p>
 <blockquote>
 <p>IOC 前生 – 采用工厂设计模式</p>
 </blockquote>
-<p><img src="E:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/wps5.jpg" alt="img"></p>
+<p><img    class="lazyload" data-original="E:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/wps5.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">img</span></p>
 <blockquote>
 <p>IOC – 采用反转控制</p>
 </blockquote>
-<p><img src="E:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/wps7.jpg" alt="img"></p>
+<p><img    class="lazyload" data-original="E:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/wps7.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">img</span></p>
 <h2 id="x3D-x3D-2-2、如何定义Bean-x3D-x3D"><a href="#x3D-x3D-2-2、如何定义Bean-x3D-x3D" class="headerlink" title="&#x3D;&#x3D;2.2、如何定义Bean&#x3D;&#x3D;"></a>&#x3D;&#x3D;2.2、如何定义Bean&#x3D;&#x3D;</h2><h3 id="1-BeanFactory"><a href="#1-BeanFactory" class="headerlink" title="1.BeanFactory"></a>1.BeanFactory</h3><p>BeanFactory表示Bean工厂，BeanFactory会负责创建Bean，并且提供获取Bean的API。而ApplicationContext继承了BeanFactory。</p>
 <p>BeanFactory 是 Spring 框架的基础设施，面向 Spring 本身；ApplicationContext 面向使用 Spring 框架的开发者，几乎所有的应用场合都直接使用 ApplicationContext 而非底层的 BeanFactory。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//BeanFactory</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">BeanFactory</span> &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//ListableBeanFactory</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">ListableBeanFactory</span> <span class="keyword">extends</span> <span class="title class_">BeanFactory</span> &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//ApplicationContext</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title class_">ApplicationContext</span> <span class="keyword">extends</span> <span class="title class_">EnvironmentCapable</span>, ListableBeanFactory, HierarchicalBeanFactory, MessageSource, ApplicationEventPublisher, ResourcePatternResolver &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -311,7 +381,7 @@
 <p>基本数据类型及其封装类、String 等类型都可以采取字面值注入的方式。</p>
 <p>若字面值中包含特殊字符，可以使用 &#x3D;&#x3D;<![CDATA[]]>&#x3D;&#x3D;把字面值包裹起来。</p>
 </blockquote>
-<p><img src="E:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/wps9.jpg" alt="img"></p>
+<p><img    class="lazyload" data-original="E:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/wps9.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">img</span></p>
 <h4 id="2-引用其它-Bean"><a href="#2-引用其它-Bean" class="headerlink" title="2).引用其它 Bean"></a>2).引用其它 Bean</h4><blockquote>
 <p>1). 组成应用程序的 Bean 经常需要相互协作以完成应用程序的功能。 要使 Bean 能够相互访问, 就必须在 Bean 配置文件中指定对 Bean 的引用。</p>
 <p>2). 在 Bean 的配置文件中, 可以通过 <ref> 元素或 ref属性为 Bean 的属性或构造器参数指定对 Bean 的引用。</p>
@@ -323,7 +393,7 @@
 </ul>
 </blockquote>
 </blockquote>
-<p><img src="E:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/1624205450396.png" alt="1624205450396"></p>
+<p><img    class="lazyload" data-original="E:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/1624205450396.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">1624205450396</span></p>
 <h4 id="3-级联属性"><a href="#3-级联属性" class="headerlink" title="3).级联属性"></a>3).级联属性</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=<span class="string">&quot;1.0&quot;</span> encoding=<span class="string">&quot;UTF-8&quot;</span>?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">beans</span> <span class="attr">xmlns</span>=<span class="string">&quot;http://www.springframework.org/schema/beans&quot;</span></span></span><br><span class="line"><span class="tag">       <span class="attr">xmlns:xsi</span>=<span class="string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span></span><br><span class="line"><span class="tag">       <span class="attr">xsi:schemaLocation</span>=<span class="string">&quot;http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;p&quot;</span> <span class="attr">class</span>=<span class="string">&quot;com.cm.ch02.ref.Person&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;username&quot;</span> <span class="attr">value</span>=<span class="string">&quot;李四&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;age&quot;</span> <span class="attr">value</span>=<span class="string">&quot;35&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;car&quot;</span> <span class="attr">ref</span>=<span class="string">&quot;c&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment">            通过级联属性操作修改车的价格</span></span><br><span class="line"><span class="comment">            1.等价于Person对象调用了setCar(),car对象调用了setPrice()</span></span><br><span class="line"><span class="comment">            2.属性需要先初始化赋值，否则会出现异常</span></span><br><span class="line"><span class="comment">        --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;car.price&quot;</span> <span class="attr">value</span>=<span class="string">&quot;500000&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;c&quot;</span> <span class="attr">class</span>=<span class="string">&quot;com.cm.ch02.ref.Car&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;label&quot;</span> <span class="attr">value</span>=<span class="string">&quot;aodi&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;price&quot;</span> <span class="attr">value</span>=<span class="string">&quot;300000&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">beans</span>&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <h4 id="4-集合属性"><a href="#4-集合属性" class="headerlink" title="4).集合属性"></a>4).集合属性</h4><blockquote>
@@ -332,26 +402,26 @@
 <p>3.数组的定义和 List 一样, 都使用 <list></p>
 <p>4.配置 java.util.Set 需要使用 <set> 标签, 定义元素的方法与 List 一样.</p>
 </blockquote>
-<p><img src="E:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/1624205680085.png" alt="1624205680085"></p>
+<p><img    class="lazyload" data-original="E:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/1624205680085.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">1624205680085</span></p>
 <blockquote>
 <p>5.Java.util.Map 通过 <map> 标签定义, <map> 标签里可以使用多个 <entry> 作为子标签. 每个条目包含一个键和一个值. </p>
 <p>6.必须在 <key> 标签里定义键</p>
 <p>7.因为键和值的类型没有限制, 所以可以自由地为它们指定 <value>, <ref>, <bean> 或 <null> 元素. </p>
 <p>8.可以将 Map 的键和值作为 <entry> 的属性定义: 简单常量使用 key 和 value 来定义; Bean 引用通过 key-ref 和 value-ref 属性定义</p>
 </blockquote>
-<p><img src="E:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/1624205700321.png" alt="1624205700321"></p>
+<p><img    class="lazyload" data-original="E:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/1624205700321.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">1624205700321</span></p>
 <blockquote>
 <p>9.使用 utility scheme 定义集合</p>
 <p>1).使用基本的集合标签定义集合时, 不能将集合作为独立的 Bean 定义, 导致其他 Bean 无法引用该集合, 所以无法在不同 Bean 之间共享集合.</p>
 <p>2).可以使用 util schema 里的集合标签定义独立的集合 Bean. 需要注意的是, 必须在 <beans> 根元素里添加 util schema 定义</p>
 </blockquote>
-<p><img src="E:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/1624206566669.png" alt="1624206566669"></p>
+<p><img    class="lazyload" data-original="E:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/1624206566669.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">1624206566669</span></p>
 <h4 id="5-p命名空间"><a href="#5-p命名空间" class="headerlink" title="5).p命名空间"></a>5).p命名空间</h4><blockquote>
 <p>1.为了简化 XML 文件的配置，越来越多的 XML 文件采用属性而非子元素配置信息。</p>
 <p>2.Spring 从 2.5 版本开始引入了一个新的 p 命名空间，可以通过 <bean> 元素属性的方式配置 Bean 的属性。</p>
 <p>3.使用 p 命名空间后，基于 XML 的配置方式将进一步简化</p>
 </blockquote>
-<p><img src="E:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/1624206601107.png" alt="1624206601107"></p>
+<p><img    class="lazyload" data-original="E:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/1624206601107.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">1624206601107</span></p>
 <h3 id="3-Bean的作用域"><a href="#3-Bean的作用域" class="headerlink" title="3.Bean的作用域"></a>3.Bean的作用域</h3><table>
 <thead>
 <tr>
@@ -381,7 +451,7 @@
 <p>2.默认情况下, Spring 只为每个在 IOC 容器里声明的 Bean 创建唯一一个实例, 整个 IOC 容器范围内都能共享该实例：所有后续的 getBean() 调用和 Bean 引用都将返回这个唯一的 Bean 实例.该作用域被称为 singleton, 它是所有 Bean 的默认作用域.</p>
 </blockquote>
 <h3 id="4-外部属性文件"><a href="#4-外部属性文件" class="headerlink" title="4.外部属性文件"></a>4.外部属性文件</h3><p>1.在类路径下新建<strong>db.properties</strong>属性文件</p>
-<p><img src="E:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/image-20200713001742668.png" alt="image-20200713001742668"></p>
+<p><img    class="lazyload" data-original="E:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/image-20200713001742668.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">image-20200713001742668</span></p>
 <figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#mysql</span></span><br><span class="line"><span class="attr">db.user</span>=<span class="string">root</span></span><br><span class="line"><span class="attr">db.password</span>=<span class="string">root</span></span><br><span class="line"><span class="attr">db.url</span>=<span class="string">jdbc:mysql://localhost:3306/test?useUnicode=true&amp;characterEncoding=utf-8&amp;serverTimezone=Asia/Shanghai</span></span><br><span class="line"><span class="attr">db.driverClass</span>=<span class="string">com.mysql.cj.jdbc.Driver</span></span><br><span class="line"><span class="attr">db.maxPoolSize</span>=<span class="string">30</span></span><br><span class="line"><span class="attr">db.minPoolSize</span>=<span class="string">3</span></span><br><span class="line"><span class="attr">db.initialPoolSize</span>=<span class="string">5</span></span><br><span class="line"><span class="attr">db.acquireIncrement</span>=<span class="string">5</span></span><br></pre></td></tr></table></figure>
 
 
@@ -450,8 +520,8 @@
 <td align="center">采用XxxTypeFilter通过代码的方式定义过滤规则。该类必须实现org.springframework.core.type.TypeFilter接口</td>
 </tr>
 </tbody></table>
-<p><img src="E:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/1624207675347.png" alt="1624207675347"></p>
-<p><img src="E:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/1624207684616.png" alt="1624207684616"></p>
+<p><img    class="lazyload" data-original="E:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/1624207675347.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">1624207675347</span></p>
+<p><img    class="lazyload" data-original="E:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/1624207684616.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">1624207684616</span></p>
 <h3 id="6-BeanPostProcessor"><a href="#6-BeanPostProcessor" class="headerlink" title="6.BeanPostProcessor"></a>6.BeanPostProcessor</h3><p>BeanPostProcessor表示Bean的后置处理器，我们可以定义一个或多个BeanPostProcessor。</p>
 <p>一个BeanPostProcessor可以在<strong>任意一个Bean</strong>的<strong>初始化之前</strong>以及<strong>初始化之后</strong>去额外的做一些用户自定义的逻辑，当然，我们可以通过判断beanName来进行针对性处理（针对某个Bean，或某部分Bean）。</p>
 <p>我们可以通过定义BeanPostProcessor来干涉Spring创建Bean的过程。</p>
@@ -463,15 +533,15 @@
 <p>5).当容器关闭close时, 调用 Bean 的销毁方法</p>
 </blockquote>
 <p>在 Bean 的声明里设置 init-method 和 destroy-method 属性, 为 Bean 指定初始化和销毁方法.</p>
-<p><img src="E:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/1624207142631.png" alt="1624207142631"></p>
+<p><img    class="lazyload" data-original="E:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/1624207142631.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">1624207142631</span></p>
 <h4 id="2-创建-Bean-后置处理器"><a href="#2-创建-Bean-后置处理器" class="headerlink" title="2).创建 Bean 后置处理器"></a>2).创建 Bean 后置处理器</h4><blockquote>
 <p>1.Bean 后置处理器允许在调用初始化方法前后对 Bean 进行额外的处理.</p>
 <p>2.Bean 后置处理器对 IOC 容器里的所有 Bean 实例逐一处理, 而非单一实例. 其典型应用是: 检查 Bean 属性的正确性或根据特定的标准更改 Bean 的属性.</p>
 <p>3.对Bean 后置处理器而言, 需要实现**&#x3D;&#x3D;BeanPostProcessor接口&#x3D;&#x3D;**. 在初始化方法被调用前后, Spring 将把每个 Bean 实例分别传递给上述接口的以下两个方法:</p>
 </blockquote>
-<p><img src="E:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/1624207251843.png" alt="1624207251843"></p>
-<p><img src="E:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/1624207264116.png" alt="1624207264116"></p>
-<p><img src="E:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/1624207273596.png" alt="1624207273596"></p>
+<p><img    class="lazyload" data-original="E:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/1624207251843.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">1624207251843</span></p>
+<p><img    class="lazyload" data-original="E:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/1624207264116.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">1624207264116</span></p>
+<p><img    class="lazyload" data-original="E:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/1624207273596.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">1624207273596</span></p>
 <h4 id="3-添加-Bean-后置处理器后-Bean-的生命周期"><a href="#3-添加-Bean-后置处理器后-Bean-的生命周期" class="headerlink" title="3).添加 Bean 后置处理器后 Bean 的生命周期"></a>3).添加 Bean 后置处理器后 Bean 的生命周期</h4><blockquote>
 <p>1).通过构造器或工厂方法创建 Bean 实例</p>
 <p>2).为 Bean 的属性设置值和对其他 Bean 的引用</p>
@@ -549,7 +619,7 @@
 </blockquote>
 <h3 id="8-基于注解方式实现属性注入"><a href="#8-基于注解方式实现属性注入" class="headerlink" title="8.基于注解方式实现属性注入"></a>8.基于注解方式实现属性注入</h3><h4 id="（1）-Autowired：根据属性类型进行自动装配"><a href="#（1）-Autowired：根据属性类型进行自动装配" class="headerlink" title="（1）@Autowired：根据属性类型进行自动装配"></a>（1）@Autowired：根据属性类型进行自动装配</h4><p>第一步 把 service 和 dao 对象创建，在 service 和 dao 类分别添加创建对象注解@Service和@Repository</p>
 <p>第二步 在 service 注入 dao 对象，在 service 类添加 dao 类型属性，在属性上面使用注解</p>
-<p><img src="E:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/1624207782369.png" alt="1624207782369"></p>
+<p><img    class="lazyload" data-original="E:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/1624207782369.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">1624207782369</span></p>
 <blockquote>
 <p>@Autowired注解可以写在：</p>
 <ol>
@@ -559,8 +629,8 @@
 </ol>
 </blockquote>
 <h4 id="（2）-Qualifier：根据名称进行注入"><a href="#（2）-Qualifier：根据名称进行注入" class="headerlink" title="（2）@Qualifier：根据名称进行注入"></a>（2）@Qualifier：根据名称进行注入</h4><p>这个@Qualifier 注解的使用，和上面@Autowired 一起使用 </p>
-<p><img src="E:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/1624207914606.png" alt="1624207914606"></p>
-<h4 id="（3）-Resource：可以根据类型注入，可以根据名称注入"><a href="#（3）-Resource：可以根据类型注入，可以根据名称注入" class="headerlink" title="（3）@Resource：可以根据类型注入，可以根据名称注入"></a>（3）@Resource：可以根据类型注入，可以根据名称注入</h4><p><img src="E:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/1624207952567.png" alt="1624207952567"></p>
+<p><img    class="lazyload" data-original="E:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/1624207914606.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">1624207914606</span></p>
+<h4 id="（3）-Resource：可以根据类型注入，可以根据名称注入"><a href="#（3）-Resource：可以根据类型注入，可以根据名称注入" class="headerlink" title="（3）@Resource：可以根据类型注入，可以根据名称注入"></a>（3）@Resource：可以根据类型注入，可以根据名称注入</h4><p><img    class="lazyload" data-original="E:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/1624207952567.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">1624207952567</span></p>
 <h3 id="9-BeanPostProcessor"><a href="#9-BeanPostProcessor" class="headerlink" title="9.BeanPostProcessor"></a>9.BeanPostProcessor</h3><p>BeanPostProcessor表示Bean的后置处理器，我们可以定义一个或多个BeanPostProcessor。</p>
 <p>一个BeanPostProcessor可以在<strong>任意一个Bean</strong>的<strong>初始化之前</strong>以及<strong>初始化之后</strong>去额外的做一些用户自定义的逻辑，当然，我们可以通过判断beanName来进行针对性处理（针对某个Bean，或某部分Bean）。</p>
 <p>我们可以通过定义BeanPostProcessor来干涉Spring创建Bean的过程。</p>
@@ -569,7 +639,7 @@
 <p>2.Bean 后置处理器对 IOC 容器里的所有 Bean 实例逐一处理, 而非单一实例. 其典型应用是: 检查 Bean 属性的正确性或根据特定的标准更改 Bean 的属性.</p>
 <p>3.对Bean 后置处理器而言, 需要实现**&#x3D;&#x3D;BeanPostProcessor接口&#x3D;&#x3D;**. 在初始化方法被调用前后, Spring 将把每个 Bean 实例分别传递给上述接口的以下两个方法:</p>
 </blockquote>
-<p><img src="E:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/1624207251843.png" alt="1624207251843"></p>
+<p><img    class="lazyload" data-original="E:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/1624207251843.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">1624207251843</span></p>
 <h4 id="9-2-初始化和销毁"><a href="#9-2-初始化和销毁" class="headerlink" title="9.2 初始化和销毁"></a>9.2 初始化和销毁</h4><h5 id="1-Bean指定init-method-和-destroy-method-属性"><a href="#1-Bean指定init-method-和-destroy-method-属性" class="headerlink" title="1).Bean指定init-method 和 destroy-method 属性"></a>1).Bean指定init-method 和 destroy-method 属性</h5><p>在 Bean 的声明里设置 init-method 和 destroy-method 属性, 为 Bean 指定初始化和销毁方法.</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Bean(name = &quot;t&quot; , initMethod = &quot;init&quot; ,destroyMethod = &quot;destroy&quot;)</span></span><br><span class="line"><span class="keyword">public</span> Tiger <span class="title function_">tiger</span><span class="params">()</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Tiger</span>(<span class="string">&quot;白虎&quot;</span>,<span class="string">&quot;雌&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -722,7 +792,7 @@
 <p>1.在 aop Schema 中, 每种通知类型都对应一个特定的 XML 元素. </p>
 <p>2.通知元素需要使用 <pointcut-ref> 来引用切入点, 或用 <pointcut> 直接嵌入切入点表达式.  method 属性指定切面类中通知方法的名称.</p>
 </blockquote>
-<h3 id="4-案例"><a href="#4-案例" class="headerlink" title="4.案例"></a>4.案例</h3><p><img src="E:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/1624209454641.png" alt="1624209454641"></p>
+<h3 id="4-案例"><a href="#4-案例" class="headerlink" title="4.案例"></a>4.案例</h3><p><img    class="lazyload" data-original="E:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/1624209454641.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">1624209454641</span></p>
 <h1 id="四-Spring的事务管理"><a href="#四-Spring的事务管理" class="headerlink" title="四.Spring的事务管理"></a>四.Spring的事务管理</h1><h2 id="1-事务简介"><a href="#1-事务简介" class="headerlink" title="1.事务简介"></a>1.事务简介</h2><p>1).事务管理是企业级应用程序开发中必不可少的技术,  用来确保数据的完整性和一致性.</p>
 <p>2).事务就是一系列的动作, 它们被当做一个单独的工作单元. 这些动作要么全部完成, 要么全部不起作用</p>
 <p>3).事务的四个关键属性(ACID)</p>
@@ -754,20 +824,20 @@
 <p>&#x3D;&#x3D;当事务方法被另一个事务方法调用时, 必须指定事务应该如何传播&#x3D;&#x3D;. 例如: 方法可能继续在现有事务中运行, 也可能开启一个新事务, 并在自己的事务中运行.</p>
 <p>事务的传播行为可以由传播属性指定. </p>
 </blockquote>
-<p><img src="E:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/image-20200713030313168.png" alt="image-20200713030313168"></p>
+<p><img    class="lazyload" data-original="E:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/image-20200713030313168.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">image-20200713030313168</span></p>
 <blockquote>
 <p>REQUIRED 传播行为</p>
 <p>1).例如当购买方法purchase() 被另一个事务方法 checkout() 调用时, 它默认会在现有的事务内运行。这个默认的传播行为就是 REQUIRED. 因此在 checkout() 方法的开始和终止边界内只有一个事务. 这个事务只在 checkout() 方法结束的时候被提交。</p>
 <p>2).事务传播属性可以在 @Transactional 注解的 propagation 属性中定义</p>
 </blockquote>
-<p><img src="E:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/image-20200713030508879.png" alt="image-20200713030508879"></p>
-<p><img src="E:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/wps4u6ax2.png" alt="img"></p>
+<p><img    class="lazyload" data-original="E:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/image-20200713030508879.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">image-20200713030508879</span></p>
+<p><img    class="lazyload" data-original="E:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/wps4u6ax2.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">img</span></p>
 <blockquote>
 <p>REQUIRES_NEW 传播行为</p>
 <p>另一种常见的传播行为是 REQUIRES_NEW. 它表示该方法必须启动一个新事务, 并在自己的事务内运行. 如果有事务在运行, 就应该先挂起它.</p>
 </blockquote>
-<p><img src="E:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/wpsvszCQD.png" alt="img"> </p>
-<p><img src="E:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/wpsIxaTZU.png" alt="img"></p>
+<p><img    class="lazyload" data-original="E:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/wpsvszCQD.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">img</span> </p>
+<p><img    class="lazyload" data-original="E:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/wpsIxaTZU.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">img</span></p>
 <h4 id="2）、事务的隔离级别"><a href="#2）、事务的隔离级别" class="headerlink" title="2）、事务的隔离级别"></a>2）、事务的隔离级别</h4><blockquote>
 <p>并发事务所导致的问题</p>
 <p>1).当同一个应用程序或者不同应用程序中的多个事务在同一个数据集上并发执行时, 可能会出现许多意外的问题</p>
@@ -780,24 +850,24 @@
 <p>2).在实际开发中, 为了提升性能, 事务会以较低的隔离级别运行.</p>
 <p>3).事务的隔离级别可以通过隔离事务属性指定</p>
 <p>4).Spring 支持的事务隔离级别</p>
-<p><img src="E:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/image-20200713030831721.png" alt="image-20200713030831721"></p>
+<p><img    class="lazyload" data-original="E:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/image-20200713030831721.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">image-20200713030831721</span></p>
 <p>5).事务的隔离级别要得到底层数据库引擎的支持, 而不是应用程序或者框架的支持.</p>
 <p>Oracle 支持的 2 种事务隔离级别：READ_COMMITED , SERIALIZABLE</p>
 <p>Mysql 支持以上 4种事务隔离级别.</p>
 <p>6).设置隔离事务属性</p>
 <p>用 @Transactional 注解声明式地管理事务时可以在 @Transactional 的 isolation 属性中设置隔离级别.</p>
-<p><img src="E:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/wpsjXDKhZ.png" alt="img"></p>
+<p><img    class="lazyload" data-original="E:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/wpsjXDKhZ.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">img</span></p>
 <h4 id="3）、设置回滚事务属性"><a href="#3）、设置回滚事务属性" class="headerlink" title="3）、设置回滚事务属性"></a>3）、设置回滚事务属性</h4><p>1).<strong>默认情况下只有未检查异常(RuntimeException和Error类型的异常)会导致事务回滚. 而受检查异常不会.</strong></p>
 <p>2).事务的回滚规则可以通过 @Transactional 注解的 <strong>rollbackFor</strong> 和 <strong>noRollbackFor</strong> 属性来定义. 这两个属性被声明为 Class[] 类型的, 因此可以为这两个属性指定多个异常类.</p>
 <p>rollbackFor:  遇到时必须进行回滚</p>
-<p><img src="E:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/wpsgqn01n.png" alt="img"></p>
+<p><img    class="lazyload" data-original="E:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/wpsgqn01n.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">img</span></p>
 <h4 id="4）、超时和只读属性"><a href="#4）、超时和只读属性" class="headerlink" title="4）、超时和只读属性"></a>4）、超时和只读属性</h4><p>1.由于事务可以在行和表上获得锁,  因此长事务会占用资源, 并对整体性能产生影响. </p>
 <p>2.如果一个事物只读取数据但不做修改, 数据库引擎可以对这个事务进行优化.</p>
 <p>3.超时事务属性: timeout属性，事务在强制回滚之前可以保持多久. 这样可以防止长期运行的事务占用资源.</p>
 <p>4.只读事务属性: readOnly属性为true时，表示这个事务只读取数据但不更新数据, 这样可以帮助数据库引擎优化事务.</p>
 <p>5.设置超时和只读事务属性</p>
 <p>超时和只读属性可以在 @Transactional 注解中定义.超时属性以秒为单位来计算.</p>
-<p><img src="E:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/wpsW0UVa6.png" alt="img"></p>
+<p><img    class="lazyload" data-original="E:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/wpsW0UVa6.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">img</span></p>
 <h3 id="4-4-案例"><a href="#4-4-案例" class="headerlink" title="4.4 案例"></a>4.4 案例</h3><blockquote>
 <p>需求：</p>
 <p>1).接口BookShopDAO中:</p>
@@ -812,7 +882,7 @@
 <p>&#x2F;&#x2F;一个用户一次只能买一本书（操作：1.账户余额减去书的单价 2.书的库存减1）</p>
 <p>public void purchase(String username,int bookId);</p>
 </blockquote>
-<p><img src="E:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/1624209924680.png" alt="1624209924680"></p>
+<p><img    class="lazyload" data-original="E:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/1624209924680.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">1624209924680</span></p>
 <blockquote>
 <p>导入sql文件，初始化数据：表结构创建 t_account账户表  t_book书表  t_stock书的库存表</p>
 </blockquote>
@@ -866,13 +936,13 @@
 <p>2).为了在 Spring 2.x 中启用声明式事务管理, 可以通过 tx Schema 中定义的<a href="tx:advice">tx:advice</a> 元素声明事务通知, 为此必须事先将这个 Schema 定义添加到 <beans> 根元素中去.</p>
 <p>3).声明了事务通知后, 就需要将它与切入点关联起来. 由于事务通知是在 <a href="aop:config">aop:config</a> 元素外部声明的, 所以它无法直接与切入点产生关联. 所以必须在 <a href="aop:config">aop:config</a> 元素中声明一个增强器通知与切入点关联起来.</p>
 <p>4).由于 Spring AOP 是基于代理的方法, 所以只能增强公共方法. 因此, 只有公有方法才能通过 Spring AOP 进行事务管理.</p>
-<h3 id="5-2-用事务通知声明式地管理事务示例代码"><a href="#5-2-用事务通知声明式地管理事务示例代码" class="headerlink" title="5.2 用事务通知声明式地管理事务示例代码"></a>5.2 用事务通知声明式地管理事务示例代码</h3><p><img src="E:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/1624210226913.png" alt="1624210226913"></p>
-<p><img src="E:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/1624210239022.png" alt="1624210239022"></p>
-<h3 id="5-3-在事务通知中-可以在-tx-method-元素中配置传播属性"><a href="#5-3-在事务通知中-可以在-tx-method-元素中配置传播属性" class="headerlink" title="5.3 在事务通知中, 可以在 tx:method 元素中配置传播属性"></a>5.3 在事务通知中, 可以在 <a href="tx:method">tx:method</a> 元素中配置传播属性</h3><p><img src="E:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/1624210263240.png" alt="1624210263240"></p>
-<h3 id="5-4-在事务通知中-可以在-tx-method-元素中指定隔离级别"><a href="#5-4-在事务通知中-可以在-tx-method-元素中指定隔离级别" class="headerlink" title="5.4 在事务通知中, 可以在 tx:method 元素中指定隔离级别"></a>5.4 在事务通知中, 可以在 <a href="tx:method">tx:method</a> 元素中指定隔离级别</h3><p><img src="E:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/1624210283686.png" alt="1624210283686"></p>
+<h3 id="5-2-用事务通知声明式地管理事务示例代码"><a href="#5-2-用事务通知声明式地管理事务示例代码" class="headerlink" title="5.2 用事务通知声明式地管理事务示例代码"></a>5.2 用事务通知声明式地管理事务示例代码</h3><p><img    class="lazyload" data-original="E:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/1624210226913.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">1624210226913</span></p>
+<p><img    class="lazyload" data-original="E:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/1624210239022.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">1624210239022</span></p>
+<h3 id="5-3-在事务通知中-可以在-tx-method-元素中配置传播属性"><a href="#5-3-在事务通知中-可以在-tx-method-元素中配置传播属性" class="headerlink" title="5.3 在事务通知中, 可以在 tx:method 元素中配置传播属性"></a>5.3 在事务通知中, 可以在 <a href="tx:method">tx:method</a> 元素中配置传播属性</h3><p><img    class="lazyload" data-original="E:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/1624210263240.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">1624210263240</span></p>
+<h3 id="5-4-在事务通知中-可以在-tx-method-元素中指定隔离级别"><a href="#5-4-在事务通知中-可以在-tx-method-元素中指定隔离级别" class="headerlink" title="5.4 在事务通知中, 可以在 tx:method 元素中指定隔离级别"></a>5.4 在事务通知中, 可以在 <a href="tx:method">tx:method</a> 元素中指定隔离级别</h3><p><img    class="lazyload" data-original="E:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/1624210283686.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">1624210283686</span></p>
 <h3 id="5-5-在事务通知中-可以在-tx-method-元素中设置回滚事务属性"><a href="#5-5-在事务通知中-可以在-tx-method-元素中设置回滚事务属性" class="headerlink" title="5.5 在事务通知中, 可以在 tx:method 元素中设置回滚事务属性"></a>5.5 在事务通知中, 可以在 <a href="tx:method">tx:method</a> 元素中设置回滚事务属性</h3><p>如果有不止一种异常, 用逗号分隔.</p>
-<p><img src="E:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/1624210311953.png" alt="1624210311953"></p>
-<h3 id="5-6-在事务通知中-在-tx-method-元素中设置超时和只读属性"><a href="#5-6-在事务通知中-在-tx-method-元素中设置超时和只读属性" class="headerlink" title="5.6 在事务通知中, 在 tx:method 元素中设置超时和只读属性"></a>5.6 在事务通知中, 在 <a href="tx:method">tx:method</a> 元素中设置超时和只读属性</h3><p><img src="E:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/1624210329897.png" alt="1624210329897"></p>
+<p><img    class="lazyload" data-original="E:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/1624210311953.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">1624210311953</span></p>
+<h3 id="5-6-在事务通知中-在-tx-method-元素中设置超时和只读属性"><a href="#5-6-在事务通知中-在-tx-method-元素中设置超时和只读属性" class="headerlink" title="5.6 在事务通知中, 在 tx:method 元素中设置超时和只读属性"></a>5.6 在事务通知中, 在 <a href="tx:method">tx:method</a> 元素中设置超时和只读属性</h3><p><img    class="lazyload" data-original="E:/ftp%E8%B5%84%E6%96%99/note/8.SSM/1.Spring/%E8%AF%BE%E4%BB%B6/image/1624210329897.png" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="   ><span class="image-caption">1624210329897</span></p>
 <h1 id="五-Spring5-新特性介绍"><a href="#五-Spring5-新特性介绍" class="headerlink" title="五.Spring5 新特性介绍"></a>五.Spring5 新特性介绍</h1><h2 id="一-Spring-FrameWork-5-0新的功能"><a href="#一-Spring-FrameWork-5-0新的功能" class="headerlink" title="一.Spring FrameWork 5.0新的功能"></a>一.Spring FrameWork 5.0新的功能</h2><p>升级到新版本的框架可以参考。<a target="_blank" rel="noopener" href="https://github.com/spring-projects/spring-framework/wiki/Migrating-from-earlier-versions-of-the-Spring-Framework">Spring git</a>。</p>
 <h3 id="1-JDK-8-和Java-EE7-以上版本"><a href="#1-JDK-8-和Java-EE7-以上版本" class="headerlink" title="1.JDK 8+和Java EE7+以上版本"></a>1.JDK 8+和Java EE7+以上版本</h3><ul>
 <li>整个框架的代码基于java8</li>
@@ -989,113 +1059,175 @@
 
 <h4 id="3-3-使用一个复合注解替代上面两个注解完成整合"><a href="#3-3-使用一个复合注解替代上面两个注解完成整合" class="headerlink" title="3.3 使用一个复合注解替代上面两个注解完成整合"></a>3.3 使用一个复合注解替代上面两个注解完成整合</h4><p><strong>可以使用组合注解@SpringJUnitConfig</strong></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> org.junit.jupiter.api.Test;</span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line"><span class="keyword">import</span> org.springframework.test.context.junit.jupiter.SpringJUnitConfig;</span><br><span class="line"></span><br><span class="line"><span class="comment">//JUnit5版本，locations属性，指定spring的配置文件</span></span><br><span class="line"><span class="meta">@SpringJUnitConfig(locations = &quot;classpath:spring.xml&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">JTest5</span> &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//classes属性，指定spring的配置类</span></span><br><span class="line"><span class="meta">@SpringJUnitConfig(classes = MyConfig.classs)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Junit5Test</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> User user;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">print</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="comment">//User&#123;name = 李四, pwd = 123&#125;</span></span><br><span class="line">        System.out.println(user);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2023/04/13/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" data-id="clgei1tt800011ovwa231exws" data-title="我的第一篇博客" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
+      </section>
+      <section class="extra">
+        
+          <ul class="copyright">
+  
+    <li><strong>本文作者：</strong>John Doe</li>
+    <li><strong>本文链接：</strong><a href="http://example.com/2023/04/13/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/index.html" title="http:&#x2F;&#x2F;example.com&#x2F;2023&#x2F;04&#x2F;13&#x2F;%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2&#x2F;index.html">http:&#x2F;&#x2F;example.com&#x2F;2023&#x2F;04&#x2F;13&#x2F;%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2&#x2F;index.html</a></li>
+    <li><strong>版权声明：</strong>本博客所有文章均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" title="BY-NC-SA" target="_blank" rel="noopener">BY-NC-SA</a> 许可协议，转载请注明出处！</li>
+  
+</ul>
+        
+        
+          <section class="donate">
+  <div id="qrcode-donate">
+    <img   class="lazyload" data-original="https://pic.izhaoo.com/alipay.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg==" >
   </div>
-  
-    
-<nav id="article-nav">
-  
-  
-    <a href="/2023/04/12/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Hello World</div>
-    </a>
-  
-</nav>
-
-  
-</article>
-
-
+  <div class="icon">
+    <a href="javascript:;" id="alipay"><i class="iconfont iconalipay"></i></a>
+    <a href="javascript:;" id="wechat"><i class="iconfont iconwechat-fill"></i></a>
+  </div>
 </section>
         
-          <aside id="sidebar">
-  
-    
+        
+        
+  <nav class="nav">
+    <a></a>
+    <a href="/2023/04/12/hello-world/">Hello World<i class="iconfont iconright"></i></a>
+  </nav>
 
-  
-    
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/04/">April 2023</a></li></ul>
-    </div>
+      </section>
+      
+    </section>
   </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
+</article></div>
+      <div class="col-xl-3">
         
-          <li>
-            <a href="/2023/04/13/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/">我的第一篇博客</a>
-          </li>
-        
-          <li>
-            <a href="/2023/04/12/hello-world/">Hello World</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
+          
+  <aside class="toc-wrap">
+    <h3 class="toc-title">文章目录：</h3>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Spring"><span class="toc-text">Spring</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80-Spring%E5%88%9D%E8%AF%86"><span class="toc-text">一.Spring初识</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Spring%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-text">1.Spring是什么？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#x3D-x3D-2-%E5%85%B7%E4%BD%93%E6%8F%8F%E8%BF%B0Spring-x3D-x3D"><span class="toc-text">&#x3D;&#x3D;2.具体描述Spring&#x3D;&#x3D;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Spring-%E6%A8%A1%E5%9D%97"><span class="toc-text">3.Spring 模块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E6%90%AD%E5%BB%BA-Spring-%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83"><span class="toc-text">4.搭建 Spring 开发环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E5%88%9B%E5%BB%BA-HelloWorld-java"><span class="toc-text">5.创建 HelloWorld.java</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-%E9%85%8D%E7%BD%AE-applicationContext-xml"><span class="toc-text">6.配置 applicationContext.xml</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-%E6%B5%8B%E8%AF%95"><span class="toc-text">7.测试</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C-Spring%E7%9A%84IOC"><span class="toc-text">二.Spring的IOC</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1%E3%80%81Spring-IOC-amp-DI%E6%A6%82%E8%BF%B0"><span class="toc-text">2.1、Spring_IOC&amp;DI概述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#x3D-x3D-1-IOC%E5%92%8CDI%E6%A6%82%E8%BF%B0-x3D-x3D"><span class="toc-text">&#x3D;&#x3D;1.IOC和DI概述&#x3D;&#x3D;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-IOC%E6%80%9D%E6%83%B3%E5%8F%91%E5%B1%95"><span class="toc-text">2.IOC思想发展</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#x3D-x3D-2-2%E3%80%81%E5%A6%82%E4%BD%95%E5%AE%9A%E4%B9%89Bean-x3D-x3D"><span class="toc-text">&#x3D;&#x3D;2.2、如何定义Bean&#x3D;&#x3D;</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-BeanFactory"><span class="toc-text">1.BeanFactory</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-ApplicationContext"><span class="toc-text">2.ApplicationContext</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-BeanDefinition"><span class="toc-text">3.BeanDefinition</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-FactoryBean"><span class="toc-text">4.FactoryBean</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E5%87%BD%E6%95%B0%E5%BC%8F%E9%A3%8E%E6%A0%BCGenericApplicationContext"><span class="toc-text">5.函数式风格GenericApplicationContext</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-%E6%80%BB%E7%BB%93"><span class="toc-text">6.总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3%E3%80%81Spring-IOC-XML%E7%89%88"><span class="toc-text">2.3、Spring IOC XML版</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5%E7%9A%84%E6%96%B9%E5%BC%8F"><span class="toc-text">1.依赖注入的方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%B1%9E%E6%80%A7%E9%85%8D%E7%BD%AE%E7%BB%86%E8%8A%82"><span class="toc-text">2.属性配置细节</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-Bean%E7%9A%84%E4%BD%9C%E7%94%A8%E5%9F%9F"><span class="toc-text">3.Bean的作用域</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E5%A4%96%E9%83%A8%E5%B1%9E%E6%80%A7%E6%96%87%E4%BB%B6"><span class="toc-text">4.外部属性文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E6%8C%87%E5%AE%9A%E6%89%AB%E6%8F%8F%E5%8C%85"><span class="toc-text">5.指定扫描包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-BeanPostProcessor"><span class="toc-text">6.BeanPostProcessor</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#x3D-x3D-2-4%E3%80%81Spring-IOC-%E9%85%8D%E7%BD%AE%E7%B1%BB-%E6%B3%A8%E8%A7%A3%E7%89%88-x3D-x3D"><span class="toc-text">&#x3D;&#x3D;2.4、Spring IOC 配置类+注解版&#x3D;&#x3D;</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%96%B0%E5%BB%BAJava-Config%E7%9A%84%E9%85%8D%E7%BD%AE%E7%B1%BB"><span class="toc-text">1.新建Java Config的配置类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E7%89%B9%E5%AE%9A%E7%BB%84%E4%BB%B6"><span class="toc-text">2.特定组件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%AF%B9%E4%BA%8E%E6%89%AB%E6%8F%8F%E5%88%B0%E7%9A%84%E7%BB%84%E4%BB%B6-Spring-%E6%9C%89%E9%BB%98%E8%AE%A4%E7%9A%84%E5%91%BD%E5%90%8D%E7%AD%96%E7%95%A5"><span class="toc-text">3.对于扫描到的组件, Spring 有默认的命名策略</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-Bean%E7%9A%84%E4%BD%9C%E7%94%A8%E5%9F%9F"><span class="toc-text">5.Bean的作用域</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-%E5%8A%A0%E8%BD%BD%E5%A4%96%E9%83%A8%E5%B1%9E%E6%80%A7%E6%96%87%E4%BB%B6"><span class="toc-text">6.加载外部属性文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-ExcludeFilter%E5%92%8CIncludeFilter"><span class="toc-text">7.ExcludeFilter和IncludeFilter</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-%E5%9F%BA%E4%BA%8E%E6%B3%A8%E8%A7%A3%E6%96%B9%E5%BC%8F%E5%AE%9E%E7%8E%B0%E5%B1%9E%E6%80%A7%E6%B3%A8%E5%85%A5"><span class="toc-text">8.基于注解方式实现属性注入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-BeanPostProcessor"><span class="toc-text">9.BeanPostProcessor</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-%E7%AE%A1%E7%90%86Bean%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="toc-text">10.管理Bean的生命周期</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89-Spring%E7%9A%84AOP"><span class="toc-text">三.Spring的AOP</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#x3D-x3D-3-1%E3%80%81AOP-%E5%8E%9F%E7%90%86-x3D-x3D"><span class="toc-text">&#x3D;&#x3D;3.1、AOP 原理&#x3D;&#x3D;</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E9%9C%80%E6%B1%82"><span class="toc-text">1.需求</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0%E7%89%87%E6%AE%B5"><span class="toc-text">2.代码实现片段</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E4%BD%BF%E7%94%A8%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86%E8%A7%A3%E5%86%B3%E4%B8%8A%E8%BF%B0%E9%97%AE%E9%A2%98"><span class="toc-text">3.使用动态代理解决上述问题</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2%E3%80%81AOP-%E7%AE%80%E4%BB%8B"><span class="toc-text">3.2、AOP 简介</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#x3D-x3D-1-AOP-Aspect-Oriented-Programming-%E9%9D%A2%E5%90%91%E5%88%87%E9%9D%A2%E7%BC%96%E7%A8%8B-x3D-x3D"><span class="toc-text">&#x3D;&#x3D;1.AOP(Aspect-Oriented Programming, 面向切面编程)&#x3D;&#x3D;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-AOP%E7%9A%84%E5%A5%BD%E5%A4%84"><span class="toc-text">2.AOP的好处</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-AOP%E6%9C%AF%E8%AF%AD"><span class="toc-text">3.AOP术语</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#x3D-x3D-3-3%E3%80%81Spring-AOP-%E6%B3%A8%E8%A7%A3-%E9%85%8D%E7%BD%AE%E7%B1%BB%E7%89%88-x3D-x3D"><span class="toc-text">&#x3D;&#x3D;3.3、Spring  AOP  注解+ 配置类版&#x3D;&#x3D;</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E4%BF%AE%E6%94%B9pom-xml"><span class="toc-text">1.修改pom.xml</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E6%96%B0%E5%BB%BAspring%E7%9A%84%E6%A0%B8%E5%BF%83%E9%85%8D%E7%BD%AE%E7%B1%BB"><span class="toc-text">2.新建spring的核心配置类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E7%94%A8-AspectJ-%E6%B3%A8%E8%A7%A3%E5%A3%B0%E6%98%8E%E5%88%87%E9%9D%A2"><span class="toc-text">3.用 AspectJ 注解声明切面</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E9%80%9A%E7%9F%A5"><span class="toc-text">4.通知</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E5%88%A9%E7%94%A8%E6%96%B9%E6%B3%95%E7%AD%BE%E5%90%8D%E7%BC%96%E5%86%99-AspectJ-%E5%88%87%E5%85%A5%E7%82%B9%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-text">5.利用方法签名编写 AspectJ 切入点表达式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-%E6%8C%87%E5%AE%9A%E5%88%87%E9%9D%A2%E7%9A%84%E4%BC%98%E5%85%88%E7%BA%A7"><span class="toc-text">6.指定切面的优先级</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-%E9%87%8D%E7%94%A8%E5%88%87%E5%85%A5%E7%82%B9%E5%AE%9A%E4%B9%89"><span class="toc-text">7.重用切入点定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-%E6%A1%88%E4%BE%8B"><span class="toc-text">8.案例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-%E6%B5%8B%E8%AF%95"><span class="toc-text">9.测试</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-4%E3%80%81Spring-AOP-XML%E7%89%88"><span class="toc-text">3.4、Spring  AOP  XML版</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%9F%BA%E4%BA%8E-XML-%E2%80%94-%E5%A3%B0%E6%98%8E%E5%88%87%E9%9D%A2"><span class="toc-text">1.基于 XML —- 声明切面</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%9F%BA%E4%BA%8E-XML-%E2%80%94-%E5%A3%B0%E6%98%8E%E5%88%87%E5%85%A5%E7%82%B9"><span class="toc-text">2.基于 XML —- 声明切入点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%9F%BA%E4%BA%8E-XML-%E2%80%94-%E5%A3%B0%E6%98%8E%E9%80%9A%E7%9F%A5"><span class="toc-text">3.基于 XML —- 声明通知</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E6%A1%88%E4%BE%8B"><span class="toc-text">4.案例</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%9B-Spring%E7%9A%84%E4%BA%8B%E5%8A%A1%E7%AE%A1%E7%90%86"><span class="toc-text">四.Spring的事务管理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E4%BA%8B%E5%8A%A1%E7%AE%80%E4%BB%8B"><span class="toc-text">1.事务简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Spring-%E4%B8%AD%E7%9A%84%E4%BA%8B%E5%8A%A1%E7%AE%A1%E7%90%86"><span class="toc-text">2.Spring 中的事务管理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Spring-%E4%B8%AD%E7%9A%84%E4%BA%8B%E5%8A%A1%E7%AE%A1%E7%90%86%E5%99%A8"><span class="toc-text">3.Spring 中的事务管理器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#x3D-x3D-4-Transactional-%E6%B3%A8%E8%A7%A3-%E9%85%8D%E7%BD%AE%E7%B1%BB-%E5%A3%B0%E6%98%8E%E5%BC%8F%E7%AE%A1%E7%90%86%E4%BA%8B%E5%8A%A1-x3D-x3D"><span class="toc-text">&#x3D;&#x3D;4.@Transactional 注解+配置类 声明式管理事务&#x3D;&#x3D;</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-%E4%BF%AE%E6%94%B9pom-xml"><span class="toc-text">4.1 修改pom.xml</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-%E6%96%B0%E5%BB%BAspring%E7%9A%84%E9%85%8D%E7%BD%AE%E7%B1%BB"><span class="toc-text">4.2 新建spring的配置类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-%E7%94%A8-Transactional-%E6%B3%A8%E8%A7%A3%E5%A3%B0%E6%98%8E%E5%BC%8F%E7%AE%A1%E7%90%86%E4%BA%8B%E5%8A%A1"><span class="toc-text">4.3 用 @Transactional 注解声明式管理事务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-4-%E6%A1%88%E4%BE%8B"><span class="toc-text">4.4 案例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-Spring%E4%B8%AD%E4%BD%BF%E7%94%A8xml%E6%96%87%E4%BB%B6%E6%96%B9%E5%BC%8F%E9%85%8D%E7%BD%AE%E4%BA%8B%E5%8A%A1"><span class="toc-text">5.Spring中使用xml文件方式配置事务</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-%E7%94%A8%E4%BA%8B%E5%8A%A1%E9%80%9A%E7%9F%A5%E5%A3%B0%E6%98%8E%E5%BC%8F%E5%9C%B0%E7%AE%A1%E7%90%86%E4%BA%8B%E5%8A%A1"><span class="toc-text">5.1 用事务通知声明式地管理事务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2-%E7%94%A8%E4%BA%8B%E5%8A%A1%E9%80%9A%E7%9F%A5%E5%A3%B0%E6%98%8E%E5%BC%8F%E5%9C%B0%E7%AE%A1%E7%90%86%E4%BA%8B%E5%8A%A1%E7%A4%BA%E4%BE%8B%E4%BB%A3%E7%A0%81"><span class="toc-text">5.2 用事务通知声明式地管理事务示例代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-3-%E5%9C%A8%E4%BA%8B%E5%8A%A1%E9%80%9A%E7%9F%A5%E4%B8%AD-%E5%8F%AF%E4%BB%A5%E5%9C%A8-tx-method-%E5%85%83%E7%B4%A0%E4%B8%AD%E9%85%8D%E7%BD%AE%E4%BC%A0%E6%92%AD%E5%B1%9E%E6%80%A7"><span class="toc-text">5.3 在事务通知中, 可以在 tx:method 元素中配置传播属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-4-%E5%9C%A8%E4%BA%8B%E5%8A%A1%E9%80%9A%E7%9F%A5%E4%B8%AD-%E5%8F%AF%E4%BB%A5%E5%9C%A8-tx-method-%E5%85%83%E7%B4%A0%E4%B8%AD%E6%8C%87%E5%AE%9A%E9%9A%94%E7%A6%BB%E7%BA%A7%E5%88%AB"><span class="toc-text">5.4 在事务通知中, 可以在 tx:method 元素中指定隔离级别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-5-%E5%9C%A8%E4%BA%8B%E5%8A%A1%E9%80%9A%E7%9F%A5%E4%B8%AD-%E5%8F%AF%E4%BB%A5%E5%9C%A8-tx-method-%E5%85%83%E7%B4%A0%E4%B8%AD%E8%AE%BE%E7%BD%AE%E5%9B%9E%E6%BB%9A%E4%BA%8B%E5%8A%A1%E5%B1%9E%E6%80%A7"><span class="toc-text">5.5 在事务通知中, 可以在 tx:method 元素中设置回滚事务属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-6-%E5%9C%A8%E4%BA%8B%E5%8A%A1%E9%80%9A%E7%9F%A5%E4%B8%AD-%E5%9C%A8-tx-method-%E5%85%83%E7%B4%A0%E4%B8%AD%E8%AE%BE%E7%BD%AE%E8%B6%85%E6%97%B6%E5%92%8C%E5%8F%AA%E8%AF%BB%E5%B1%9E%E6%80%A7"><span class="toc-text">5.6 在事务通知中, 在 tx:method 元素中设置超时和只读属性</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%94-Spring5-%E6%96%B0%E7%89%B9%E6%80%A7%E4%BB%8B%E7%BB%8D"><span class="toc-text">五.Spring5 新特性介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80-Spring-FrameWork-5-0%E6%96%B0%E7%9A%84%E5%8A%9F%E8%83%BD"><span class="toc-text">一.Spring FrameWork 5.0新的功能</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-JDK-8-%E5%92%8CJava-EE7-%E4%BB%A5%E4%B8%8A%E7%89%88%E6%9C%AC"><span class="toc-text">1.JDK 8+和Java EE7+以上版本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E6%A0%B8%E5%BF%83%E7%89%B9%E6%80%A7"><span class="toc-text">2.核心特性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E6%A0%B8%E5%BF%83%E5%AE%B9%E5%99%A8"><span class="toc-text">3.核心容器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-SpringWebFlux"><span class="toc-text">4.SpringWebFlux</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E6%B5%8B%E8%AF%95%E6%96%B9%E9%9D%A2%E7%9A%84%E6%94%B9%E8%BF%9B"><span class="toc-text">5.测试方面的改进</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C-%E6%96%B0%E5%8A%9F%E8%83%BD%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-text">二.新功能的使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Spring-5-0-%E6%A1%86%E6%9E%B6%E8%87%AA%E5%B8%A6%E4%BA%86%E9%80%9A%E7%94%A8%E7%9A%84%E6%97%A5%E5%BF%97%E5%B0%81%E8%A3%85"><span class="toc-text">1.Spring 5.0 框架自带了通用的日志封装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Spring5%E6%A1%86%E6%9E%B6%E6%A0%B8%E5%BF%83%E5%AE%B9%E5%99%A8%E6%94%AF%E6%8C%81-Nullable%E6%B3%A8%E8%A7%A3"><span class="toc-text">2.Spring5框架核心容器支持@Nullable注解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-Spring5%E6%94%AF%E6%8C%81%E6%95%B4%E5%90%88JUnit5"><span class="toc-text">3.Spring5支持整合JUnit5</span></a></li></ol></li></ol></li></ol>
+  </aside>
 
-  
-</aside>
         
       </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      
-      &copy; 2023 John Doe<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
+</main>
+  
+
+<footer class="footer">
+  <div class="footer-social"><a 
+        href="tencent://message/?Menu=yes&uin=894519210 "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#12B7F5'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconQQ "></i>
+      </a><a 
+        href="javascript:; "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#09BB07'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconwechat-fill "></i>
+      </a><a 
+        href="https://www.instagram.com/izhaoo/ "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#DA2E76'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconinstagram "></i>
+      </a><a 
+        href="https://github.com/zhaoo "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color= '#9f7be1'" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  icongithub-fill "></i>
+      </a><a 
+        href="mailto:izhaoo@163.com "
+        target="_blank"
+        class="footer-social-item"
+        onMouseOver="this.style.color=#FF3B00" 
+        onMouseOut="this.style.color='#33333D'">
+          <i class="iconfont  iconmail"></i>
+      </a></div>
+  
+    <div class="footer-copyright"><p>Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme - <a target="_blank" href="https://github.com/izhaoo/hexo-theme-zhaoo">zhaoo</a></p></div>
+  
 </footer>
-
-    </div>
-    <nav id="mobile-nav">
   
-    <a href="/" class="mobile-nav-link">Home</a>
+      <div class="fab fab-plus">
+    <i class="iconfont iconplus"></i>
+  </div>
   
-    <a href="/archives" class="mobile-nav-link">Archives</a>
   
-</nav>
+  
+  <div class="fab fab-up">
+    <i class="iconfont iconcaret-up"></i>
+  </div>
+  
+  
+  
     
+<script src="/js/color-mode.js"></script>
+
+  
+  
+</body>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 
-<script src="/js/jquery-3.4.1.min.js"></script>
 
 
 
   
-<script src="/fancybox/jquery.fancybox.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
 
 
 
 
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
+
+
+
+
+
+  
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+
+
+
+
+<script src="/js/utils.js"></script>
 <script src="/js/script.js"></script>
 
 
 
 
 
-  </div>
-</body>
+
+
+  <script>
+    (function () {
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+      } else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+      }
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
 </html>
